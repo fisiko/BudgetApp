@@ -5,10 +5,12 @@ import AddBudgetModal from "./components/AddBudgetModal";
 import { useState } from "react"
 import { useBudgets } from "./contexts/BudgetsContext";
 import AddExpenseModal from "./components/AddExpenseModal";
+import ViewExpenseModal from "./components/ViewExpenseModal";
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false)
   const [showAddExpenseModal, setShowAddExpenseModal] = useState(false)
+  const [ViewExpensesModalBudgetId, setViewExpensesModalBudgetId] = useState(false)
   const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState()
   const { budgets, getBudgetExpenses } = useBudgets()
 
@@ -42,6 +44,7 @@ function App() {
           amount={amount}
           max={budget.max}
           onAddExpenseClick={() => openAddExpenseModal(budget.id)}
+          onViewExpenseClick={() => setViewExpensesModalBudgetId(budget.id)}
         />
        )
         })}
@@ -52,6 +55,10 @@ function App() {
     <AddExpenseModal show={showAddExpenseModal}
     defaultBudgetId={addExpenseModalBudgetId}
     handleClose={() => setShowAddExpenseModal(false)}
+    />
+    <ViewExpenseModal 
+    budgetId={ViewExpensesModalBudgetId}
+    handleClose={() => setViewExpensesModalBudgetId()}
     />
     </>
   );
