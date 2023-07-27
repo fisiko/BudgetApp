@@ -2,8 +2,7 @@
 import { Button, Stack, Container } from "react-bootstrap";
 import BudgetCard from "./components/BudgetCard";
 import AddBudgetModal from "./components/AddBudgetModal";
-import { useState } from "react"
-import { useBudgets } from "./contexts/BudgetsContext";
+import { useState } from "react";
 import AddExpenseModal from "./components/AddExpenseModal";
 import ViewExpenseModal from "./components/ViewExpenseModal";
 
@@ -15,8 +14,8 @@ function App() {
   const { budgets, getBudgetExpenses } = useBudgets()
 
   function openAddExpenseModal(budgetId) {
-    setShowAddExpenseModal(true)
-    setAddExpenseModalBudgetId(budgetId)
+    setShowAddExpenseModal(true);
+    setAddExpenseModalBudgetId(budgetId);
   }
 
   return (
