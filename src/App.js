@@ -7,6 +7,7 @@ import AddExpenseModal from "./components/AddExpenseModal";
 import ViewExpenseModal from "./components/ViewExpenseModal";
 import UncategorizedBudgetCard from "./components/UncategorizedBudgetCard";
 import TotalBudgetCard from "./components/TotalBudgetCard";
+import { useBudgets } from "./contexts/BudgetsContext";
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);

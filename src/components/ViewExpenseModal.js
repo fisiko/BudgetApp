@@ -14,7 +14,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
       : budgets.find((b) => b.id === budgetId);
 
   return (
-    <Modal show={budgetI != null} onHide={handleClose}>
+    <Modal show={budgetId != null} onHide={handleClose}>
       onSubmit={handleSubmit}
       <Modal.Header closeButton>
         <Modal.Title>
