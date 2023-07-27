@@ -32,21 +32,6 @@ export default function BudgetCard({
             )}
           </div>
         </Card.Title>
-        <ProgressBar
-          className="rounded-pill"
-          variant={getProgressBarVariant(amount, max)}
-          min={0}
-          max={max}
-          now={amount}
-        ></ProgressBar>
-        <Stack direction="horizontal" gap="2" className="mt-4">
-          <Button
-            variant="outline-primary"
-            className="ms-auto"
-            onClick={onAddExpenseClick}
-          >Add Expense</Button>
-          <Button onClick={onViewExpenseClick} variant="outline-secondary">View Expense</Button>
-        </Stack>
         {max && (
           <ProgressBar
             className="rounded-pill"
@@ -56,8 +41,25 @@ export default function BudgetCard({
             now={amount}
           ></ProgressBar>
         )}
-      
-          
+        {/* <ProgressBar
+          className="rounded-pill"
+          variant={getProgressBarVariant(amount, max)}
+          min={0}
+          max={max}
+          now={amount}
+        ></ProgressBar> */}
+        <Stack direction="horizontal" gap="2" className="mt-4">
+          <Button
+            variant="outline-primary"
+            className="ms-auto"
+            onClick={onAddExpenseClick}
+          >
+            Add Expense
+          </Button>
+          <Button onClick={onViewExpenseClick} variant="outline-secondary">
+            View Expense
+          </Button>
+        </Stack>
       </Card.Body>
     </Card>
   );
