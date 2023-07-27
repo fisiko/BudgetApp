@@ -1,4 +1,3 @@
-import React from "react";
 import BudgetCard from "./BudgetCard";
 import { useBudgets } from "../contexts/BudgetsContext";
 
